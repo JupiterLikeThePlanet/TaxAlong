@@ -25,6 +25,14 @@ development:
   <<: *default
   database: TaxAlong_development
 
+# development:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: TaxAlong_development
+#   pool: 5
+#   username: TaxAlong
+#   password: password1
+
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -59,6 +67,14 @@ test:
   <<: *default
   database: TaxAlong_test
 
+# test:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: TaxAlong_test
+#   pool: 5
+#   username: TaxAlong
+#   password: password1 
+
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -75,11 +91,16 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
-production:
-  <<: *default
-  database: TaxAlong_production
-  username: TaxAlong
-  password: <%= ENV['TAXALONG_DATABASE_PASSWORD'] %>
+  production:
+    url: <%= ENV['DATABASE_URL'] %>
+
+# production:
+#   <<: *default
+#   url: <%= ENV['DATABASE_URL'] %>
+#   database: TaxAlong_production
+#   username: TaxAlong
+#   password: <%= ENV['TAXALONG_DATABASE_PASSWORD'] %>
+
+
+
+
