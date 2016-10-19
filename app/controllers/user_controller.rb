@@ -15,7 +15,13 @@ class UserController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
+      # flash[:success] = "You're ready to TaxAlong!"
       redirect_to user_url(@user)
+    else
+      # flash[:danger] = "User did not save, try again"
+      render 'new'
+    end
   end
 
   def edit
