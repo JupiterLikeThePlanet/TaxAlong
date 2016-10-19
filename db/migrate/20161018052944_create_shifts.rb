@@ -5,7 +5,7 @@ class CreateShifts < ActiveRecord::Migration[5.0]
       t.string :end_mileage
       t.datetime :date
       t.decimal :earnings
-      t.reference :user
+      t.references :user
 
       t.timestamps
     end
