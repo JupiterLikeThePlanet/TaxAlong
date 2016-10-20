@@ -1,2 +1,37 @@
-<h1>User#new</h1>
-<p>Find me in app/views/user/new.html.erb</p>
+<h1>Create your User</h1>
+
+<div>
+	<div>
+		<%= form_for @user do |f| %>
+
+
+		<div class="label">
+		<p>
+		  <%= f.label :first_name %>
+		  <%= f.text_field :first_name  %>
+		</p>
+
+		<p>
+		  <%= f.label :last_name %>
+		  <%= f.text_field :last_name %>
+		</p>
+
+		<p>
+		  <%= f.label :email %>
+		  <%= f.text_field :email %>
+		</p>
+
+		<p>
+		  <%= f.label :password %>
+		  <%= f.password_field :password %>
+		</p>
+
+		<p>
+		  <%= f.submit class: 'button tiny radius' %>
+		</p>
+
+		</div>
+
+		<%end%>
+	</div>
+</div>
