@@ -2,13 +2,19 @@
 <html>
   <head>
     <title>TaxAlong</title>
+      <!-- Font lings from google apis -->
+	<link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
     <%= csrf_meta_tags %>
+
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  	<%= render 'layouts/navbar' %>
     <%= yield %>
   </body>
 </html>
