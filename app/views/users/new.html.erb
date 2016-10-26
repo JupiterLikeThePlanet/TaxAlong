@@ -2,7 +2,9 @@
 
 <div>
 	<div>
-		<%= form_for @user do |f| %>
+		<h2>Roz was here</h2>
+
+		<%= form_for(@user, :as => :post, :url => new_user_path) do |f| %>
 
 
 		<div class="label">

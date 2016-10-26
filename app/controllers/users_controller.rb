@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
 
   def index
     @users = User.all
@@ -13,11 +13,12 @@ class UserController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(:first_name => params[:first_name], :last_name => params[:last_name], :email => params[:email], :password => params[:password])
     if @user.save
       log_in @user
       # flash[:success] = "You're ready to TaxAlong!"
-      redirect_to user_url(@user)
+      # redirect_to user_url(@user)
+      redirect_to users_path(@user)
     else
       # flash[:danger] = "User did not save, try again"
       render 'new'
@@ -32,7 +33,7 @@ class UserController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+    if @user.update_attributes(params)
       # flash[:success] = "Info updated"
       redirect_to user_url(@user)
     else
