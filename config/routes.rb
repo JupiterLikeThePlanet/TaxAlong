@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :welcome, only: [:index]
   resources :about, only: [:index]
   resources :users, except: [:index]
+    post '/users/new' => 'users#create'
   resources :shift
   resources :expense
   get '/login' => 'sessions#new'

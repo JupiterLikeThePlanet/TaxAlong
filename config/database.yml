@@ -73,7 +73,7 @@ test:
 #   database: TaxAlong_test
 #   pool: 5
 #   username: TaxAlong
-#   password: password1 
+#   password: password1
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -100,7 +100,3 @@ test:
 #   database: TaxAlong_production
 #   username: TaxAlong
 #   password: <%= ENV['TAXALONG_DATABASE_PASSWORD'] %>
-
-
-
-
