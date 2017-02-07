@@ -2,38 +2,14 @@
 
 <div>
 	<div>
-		<h2>Roz was here</h2>
 
-		<%= form_for(@user, :as => :post, :url => new_user_path) do |f| %>
+    <div class="container center_div" id="signUp">
+      <%= render 'form' %>
+      <br>
+      <p>Already have an account?</p>
+      <%= link_to 'Login', login_path, method: :get, id: 'loginLink', class: 'login' %>
+    </div>
 
 
-		<div class="label">
-		<p>
-		  <%= f.label :first_name %>
-		  <%= f.text_field :first_name  %>
-		</p>
-
-		<p>
-		  <%= f.label :last_name %>
-		  <%= f.text_field :last_name %>
-		</p>
-
-		<p>
-		  <%= f.label :email %>
-		  <%= f.text_field :email %>
-		</p>
-
-		<p>
-		  <%= f.label :password %>
-		  <%= f.password_field :password %>
-		</p>
-
-		<p>
-		  <%= f.submit class: 'button tiny radius' %>
-		</p>
-
-		</div>
-
-		<%end%>
 	</div>
 </div>
