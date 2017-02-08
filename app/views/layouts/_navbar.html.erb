@@ -1,6 +1,10 @@
 <div id="nav_bar">
   <ul>
-    <li><%= link_to 'TaxAlong', root_path, method: :get %><li>
+    <li><%= link_to 'TaxAlong', root_path, method: :get %></li>
+    <%if current_user%>
+        <li><%= link_to 'Home', user_path(current_user), method: :get %><li>
+        <li><%= link_to 'Logout', logout_path, method: :delete %><li>
+    <%end%>
   </ul>
 </div>
 
