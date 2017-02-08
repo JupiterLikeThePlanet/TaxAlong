@@ -14,11 +14,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(:first_name => params["user"][:first_name], :last_name => params["user"][:last_name], :email => params["user"][:email], :password => params["user"][:password])
-    # byebug
+
     if @user.save
-      # byebug
       log_in @user
-      # byebug
       # flash[:success] = "You're ready to TaxAlong!"
       # redirect_to user_url(@user)
       redirect_to user_path(@user)
