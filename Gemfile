@@ -27,6 +27,14 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#for calendar, docs at https://github.com/excid3/simple_calendar
+gem "simple_calendar", "~> 2.0"
+
+#styling
+# gem "paperclip", "~> 5.0.0.beta1"
+gem 'bootstrap', '~> 4.0.0.alpha6' #
+gem 'sprockets-rails', :require => 'sprockets/railtie' #docs at https://github.com/rails/sprockets-rails
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
