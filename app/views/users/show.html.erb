@@ -1,6 +1,6 @@
 <div>
 
-  <h1 id="show_page_header">Hey there, <%= @user.first_name %></h1>
+  <h1 class="page_header">Hey there, <%= @user.first_name %></h1>
 
   <p>You currently have <%= @shifts.count%> shifts<p>
   <p>Looking to start a new shift? <%= link_to 'New Shift', new_user_shift_path(@user.id), method: :get%></p>

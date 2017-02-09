@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "user";
+@import "calendar";
 //= require bootstrap
 
 $font-stack: Helvetica, sans-serif;
@@ -29,7 +30,7 @@ div {
 }
 
 body{
-/*  background-image: url(".jpg");*/
+  background-image: url("https://www.saveup.com/blog/wp-content/uploads/2012/11/255399662_eb63705ed1_o.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -230,3 +231,9 @@ nav {
   margin-right: 1em;
   display: block;
 }
+
+.page_header{
+  position: relative;
+  margin-top: 73px;
+  margin-bottom: 2.5rem;
+};

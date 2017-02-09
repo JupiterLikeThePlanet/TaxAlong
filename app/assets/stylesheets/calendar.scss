@@ -1,0 +1,52 @@
+.simple-calendar {
+
+  margin-left: 2em;
+  margin-top: 6em;
+
+  .day {
+    //background-color: #00a693;
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {
+    //background-color: mediumspringgreen;
+  }
+  .past {
+    //background-color: darkslategray;
+  }
+  .future {
+    //background-color: lightgray;
+  }
+
+  .start-date {}
+
+  .prev-month {
+    //background-color: purple;
+  }
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
+
+  .calendar-heading {
+    //margin-left: 2em;
+    //margin-top: 4em;
+    margin-bottom: 1em;
+  }
+  //
+  //.table {
+  //  width: 100%;
+  //  max-width: 95%;
+  //  margin-left: 2em;
+  //  margin-top: 6em;
+  //  margin-bottom: 1rem;
+  //}
+
+}

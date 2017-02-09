@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20161018200217) do
 
   create_table "shifts", force: :cascade do |t|
     t.integer  "start_mileage"
-    t.string   "end_mileage"
+    t.integer  "end_mileage"
     t.datetime "date"
     t.decimal  "earnings"
     t.integer  "user_id"
