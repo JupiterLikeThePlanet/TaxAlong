@@ -1,11 +1,15 @@
 class ShiftController < ApplicationController
   
   def index
-    @shifts = Shift.all
+    @user = User.find(params[:user_id])
+    @shifts = @user.shifts.all
+    # @shifts = Shift.all
   end
 
   def show
+    @user = User.find(params[:user_id])
     @shift = Shift.find(params[:id])
+    # @shift = @user.shifts()
   end
 
   def new
