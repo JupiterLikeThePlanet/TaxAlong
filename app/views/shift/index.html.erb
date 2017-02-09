@@ -4,11 +4,14 @@
 <%= month_calendar events: @shifts do |date, shifts| %>
   <%= date %>
 
-    <% shifts.each do |shift|%>
-        <div>
-            <p>Shift earnings: <%= shift.earnings%>, <%=link_to "Shift Details", user_shift_path(@user.id, shift.id), method: :get %> </p>
-        </div>
-    <%end%>
+  <% shifts.each do |shift|%>
+      <div>
+          <p>Earnings: <%= shift.earnings%> [<%=link_to "Details", user_shift_path(@user.id, shift.id), method: :get %>] </p>
+      </div>
+  <%end%>
+  </br>
+  <%=link_to "Add Shift", new_user_shift_path(@user.id), method: :get %>
+
 
 
 <% end %>
