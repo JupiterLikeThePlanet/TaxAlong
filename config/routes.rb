@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :welcome, only: [:index]
   resources :about, only: [:index]
-  resources :users, except: [:index]
+  resources :users, except: [:index] do
+    resources :shift
+  end
     post '/users/new' => 'users#create'
-  resources :shift
   resources :expense
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

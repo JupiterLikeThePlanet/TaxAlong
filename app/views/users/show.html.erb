@@ -1,10 +1,14 @@
 <div>
 
   <h1 id="show_page_header">Hey there, <%= @user.first_name %></h1>
-  <p>Looking to start a new shift?</p>
 
-  <%= month_calendar(attribute: :date) do |date| %>
-      <%= date %>
-  <% end %>
+  <p>You currently have <%= @shifts.count%> shifts<p>
+  <p>Looking to start a new shift? <%= link_to 'New Shift', new_user_shift_path(@user.id), method: :get%></p>
+
+
+
+  <p>Check out your Shifts! <%= link_to 'Shifts Overview', user_shift_index_path(@user.id), method: :get%></p>
+
+
 
 </div>

@@ -17,8 +17,9 @@ class ShiftController < ApplicationController
     if @shift.save
       redirect_to shift_path(@shift)
     else 
-      flash[:danger] = "User did not save, try again"
+      # flash[:danger] = "User did not save, try again"
       render 'new'
+    end
   end
 
   def edit
@@ -43,4 +44,5 @@ class ShiftController < ApplicationController
     flash[:success] = "Shift deleted"
     redirect_to user_url(@user)
   end
+
 end
