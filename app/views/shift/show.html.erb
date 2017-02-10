@@ -1,6 +1,6 @@
 <h1>Shift#show</h1>
 <p>Find me in app/views/shift/show.html.erb</p>
 
-<%= react_component('AdjustIncome', {startMileage: @shift.start_mileage, endMileage: @shift.end_mileage, gas: 35}, {prerender: true}) %>
+<%= react_component('AdjustIncome', {startMileage: @shift.start_mileage, endMileage: @shift.end_mileage, earnings: number_with_precision(@shift.earnings, :precision => 2)}, {prerender: true}) %>
 
 

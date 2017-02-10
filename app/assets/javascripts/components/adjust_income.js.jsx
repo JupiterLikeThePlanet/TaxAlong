@@ -11,7 +11,7 @@ var AdjustIncome = React.createClass({
         return {
             startMileage: 0,
             endMileage: 0,
-            gas: 0
+            earnings: 0
         };
     },
     
@@ -19,7 +19,7 @@ var AdjustIncome = React.createClass({
         return {
             startMileage: this.props.startMileage,
             endMileage: this.props.endMileage,
-            gas: this.props.gas
+            earnings: this.props.earnings
         };
     },
 
@@ -28,7 +28,7 @@ var AdjustIncome = React.createClass({
       <div>
           <h3>Start Mileage: {this.props.startMileage}</h3>
           <h3>End Mileage: {this.props.endMileage}</h3>
-          <h3>Gas: {this.props.gas}</h3>
+          <h3>Earnings: ${this.props.earnings}</h3>
       </div>
     );
   }
