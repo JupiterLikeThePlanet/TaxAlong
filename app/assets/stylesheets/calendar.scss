@@ -16,7 +16,7 @@
   .wday-6 {}
 
   .today {
-    //background-color: mediumspringgreen;
+    background-color: mediumspringgreen;
   }
   .past {
     //background-color: darkslategray;
@@ -28,12 +28,16 @@
   .start-date {}
 
   .prev-month {
-    //background-color: purple;
+    background-color: rgba(255,0,0,0.1);
   }
-  .next-month { }
+  .next-month {
+    background-color: rgba(255,0,0,0.1);
+  }
   .current-month {}
 
-  .has-events {}
+  .has-events {
+    background-color: rgba(0,255,0,0.1)
+  }
 
   .calendar-heading {
     //margin-left: 2em;

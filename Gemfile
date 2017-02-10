@@ -30,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 #for calendar, docs at https://github.com/excid3/simple_calendar
 gem "simple_calendar", "~> 2.0"
 
+gem 'react-rails', "~> 1.6"
+
 #styling
 # gem "paperclip", "~> 5.0.0.beta1"
 gem 'bootstrap', '~> 4.0.0.alpha6' #
