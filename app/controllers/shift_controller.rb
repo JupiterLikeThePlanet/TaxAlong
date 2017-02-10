@@ -9,7 +9,7 @@ class ShiftController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @shift = Shift.find(params[:id])
-    # @shift = @user.shifts()
+    # @shift = @user.shifts[shift]
   end
 
   def new
