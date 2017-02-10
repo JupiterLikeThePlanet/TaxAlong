@@ -2,6 +2,28 @@
 
   <h1 class="page_header">Hey there, <%= @user.first_name %></h1>
 
+  <h5>Today is <%=@time.strftime("%A, %B %d")%></h5>
+
+  <% if @month <= 3 %>
+      <p>You are in the first quarter</p>
+      <p>This quarter ends on <strong>March 31st</strong></p>
+      <p>Estimated tax is due by <strong>April 15</strong></p>
+  <%elsif 4 <= @month <= 5 %>
+      <p>You are in the second quarter</p>
+      <p>This quarter ends on <strong>May 31st</strong></p>
+      <p>Estimated tax is due by <strong>June 15</strong></p>
+  <%elsif 6 <= @month <= 8 %>
+      <p>You are in the third quarter</p>
+      <p>This quarter ends on <strong>August 31st</strong></p>
+      <p>Estimated tax is due by <strong>September 15</strong></p>
+  <%elsif  9 <= @month <= 12 %>
+      <p>You are in the fourth quarter</p>
+      <p>This quarter ends on <strong>December 31st</strong></p>
+      <p>Estimated tax is due by <strong>January 15</strong></p>
+  <%end%>
+
+  <hr>
+
   <p>You currently have <%= @shifts.count%> shifts<p>
   <p>Looking to start a new shift? <%= link_to 'New Shift', new_user_shift_path(@user.id), method: :get%></p>
 

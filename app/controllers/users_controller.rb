@@ -7,6 +7,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @shifts = @user.shifts
+
+    @time = Time.new
+    @month = @time.strftime("%m").to_i
   end
 
   def new
