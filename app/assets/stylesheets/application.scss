@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import "user";
 @import "calendar";
+@import "welcome";
+@import "login_sign_up";
 //= require bootstrap
 
 $font-stack: Helvetica, sans-serif;
@@ -29,7 +31,6 @@ h6 {
   //font-family: $fontOswald;
   //font-family: $fontGravitasOne;
   font-family: $fontUltra;
-
 }
 
 
@@ -47,6 +48,7 @@ body{
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
+  margin-left: 2em;
 }
 
 #nav_bar {
@@ -163,7 +165,7 @@ body{
 }
 
 .center_div{
-  margin-top: 10em;
+  margin-top: 13em;
 }
 
 .welcome_boxes {
