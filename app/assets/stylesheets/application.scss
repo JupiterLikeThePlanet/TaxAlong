@@ -6,6 +6,11 @@
 $font-stack: Helvetica, sans-serif;
 $fontCorben: 'Corben', Georgia, Times, serif;
 $fontNobile: 'Nobile', Helvetica, Arial, sans-serif;
+$fontOswald: 'Oswald', sans-serif;
+$fontGravitasOne: 'Gravitas One', bold, sans-serif;
+$fontUltra: 'Ultra', serif;
+
+
 $nav-font: 'Open Sans','Helvetica Neue',Arial,sans-serif;
 $primary-color: #333;
 $nepalGrey: #a2afb8;
@@ -20,7 +25,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $fontCorben;
+  //font-family: $fontCorben;
+  //font-family: $fontOswald;
+  //font-family: $fontGravitasOne;
+  font-family: $fontUltra;
+
 }
 
 
@@ -30,8 +39,10 @@ div {
 }
 
 body{
-  background: linear-gradient(45deg, #BB1881, #F88B50);
-  //background-image: url("https://www.saveup.com/blog/wp-content/uploads/2012/11/255399662_eb63705ed1_o.jpg");
+  //background: linear-gradient(45deg, #BB1881, #F88B50);
+  //background: linear-gradient(45deg, #0c9e8a, #f2f2f2);
+
+  background-image: url("https://www.saveup.com/blog/wp-content/uploads/2012/11/255399662_eb63705ed1_o.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
