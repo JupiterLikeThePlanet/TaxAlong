@@ -16,9 +16,6 @@
   .wday-5 {}
   .wday-6 {}
 
-  .today {
-    background-color: mediumspringgreen;
-  }
   .past {
     //background-color: darkslategray;
   }
@@ -38,6 +35,10 @@
 
   .has-events {
     background-color: rgba(0,255,0,0.1)
+  }
+
+  .today {
+    background-color: mediumspringgreen;
   }
 
   .calendar-heading {
