@@ -2,7 +2,7 @@
   <h1>Add Shift!</h1>
 </div>
 
-<%= form_for :sessions, url: login_path, :html => { :class => "login-form"} do |f| %>
+<%= form_for :shifts, url: user_shift_index_path, :html => { :class => "login-form"} do |f| %>
 
     <div class="flex-row">
       <%= f.date_select :dateinstructed, :order => [:day, :month, :year] %>
@@ -25,6 +25,7 @@
     <div class="flex-row">
       <p>
         <%= f.label :earnings, :html => {:class => "lf--label", :id => "username"} %>
+        <%= f.number_field :earnings, :step => "0.01", :html => {:class => "lf--input"} %>
 
       </p>
     </div>
