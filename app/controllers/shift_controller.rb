@@ -21,8 +21,10 @@ class ShiftController < ApplicationController
     p "Create controlllllller !@#E$@"
     # @user = User.find(params[:id])
     # @shift = @user.shifts.create(shift_params)
+    @shift = current_user.shifts.new(shift_params)
 
-    @shift = current_user.shifts.new(:start_mileage => params["shifts"][:start_mileage], :end_mileage => params["shifts"][:end_mileage], :earnings => params["shifts"][:earnings])
+    ####
+    # @shift = current_user.shifts.new(:start_mileage => params["shifts"][:start_mileage], :end_mileage => params["shifts"][:end_mileage], :earnings => params["shifts"][:earnings])
 
     # Shift.new(:start_mileage => params["shifts"][:start_mileage], :end_mileage => params["shifts"][:end_mileage], :earnings => params["shifts"][:earnings])
 
@@ -33,7 +35,7 @@ class ShiftController < ApplicationController
       p "+"*90
       p "if statement"
       p "+"*90
-      byebug
+      # byebug
       redirect_to user_shift_path(current_user.id, @shift.id)
 
 
@@ -41,11 +43,8 @@ class ShiftController < ApplicationController
       p "*"*90
       p "else statement"
       p "*"*90
-      byebug
+      # byebug
 
-      # logger.debug @shift.errors.full_messages.join(", ")
-      # flash[:danger] = "User did not save, try again"
-      # render 'new_user_shift_path(@user.id)'
       render :new
     end
   end
@@ -72,5 +71,12 @@ class ShiftController < ApplicationController
     flash[:success] = "Shift deleted"
     redirect_to user_url(@user)
   end
+
+end
+
+private
+
+def shift_params
+  params.require(:shifts).permit(:start_mileage, :end_mileage, :earnings, :date)
 
 end
