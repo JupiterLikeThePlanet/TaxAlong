@@ -2,6 +2,7 @@ class ShiftController < ApplicationController
   
   def index
     @user = User.find(params[:user_id])
+    # //User.find_by(params[:user_id]) or User.find(params[:id]) ???
     @shifts = @user.shifts.all
     # @shifts = Shift.all
   end
@@ -17,12 +18,15 @@ class ShiftController < ApplicationController
   end
 
   def create
-    @shift = Shift.new(shift_parameters)
-    if @shift.save
-      redirect_to shift_path(@shift)
-    else 
-      # flash[:danger] = "User did not save, try again"
-      render 'new'
+    @shift = current_user.shifts.new(shift_params)
+    ####
+    # @shift = current_user.shifts.new(:start_mileage => params["shifts"][:start_mileage], :end_mileage => params["shifts"][:end_mileage], :earnings => params["shifts"][:earnings])
+    ###
+
+    if @shift.save!
+      redirect_to user_shift_path(current_user.id, @shift.id)
+    else
+      render :new
     end
   end
 
@@ -49,4 +53,10 @@ class ShiftController < ApplicationController
     redirect_to user_url(@user)
   end
 
+end
+
+private
+
+def shift_params
+  params.require(:shifts).permit(:start_mileage, :end_mileage, :earnings, :date)
 end

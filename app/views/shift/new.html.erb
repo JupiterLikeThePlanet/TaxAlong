@@ -1,2 +1,37 @@
-<h1>Shift#new</h1>
-<p>Find me in app/views/shift/new.html.erb</p>
+<div class="page_header">
+  <h1>Add Shift!</h1>
+</div>
+
+<%= form_for :shifts, url: user_shift_index_path, :html => { :class => "login-form"} do |f| %>
+
+    <div class="flex-row">
+      <%= f.date_select :date, :order => [:day, :month, :year] %>
+    </div>
+
+    <div class="flex-row">
+      <p>
+        <%= f.label :start_mileage, :html => {:class => "lf--label", :id => "username"} %>
+        <%= f.number_field :start_mileage, :html => {:class => "lf--input"}  %>
+      </p>
+    </div>
+
+    <div class="flex-row">
+      <p>
+        <%= f.label :end_mileage, :html => {:class => "lf--label", :id => "username"} %>
+        <%= f.number_field :end_mileage, :html => {:class => "lf--input"} %>
+      </p>
+    </div>
+
+    <div class="flex-row">
+      <p>
+        <%= f.label :earnings, :html => {:class => "lf--label", :id => "username"} %>
+        <%= f.number_field :earnings, :step => "0.01", :html => {:class => "lf--input"} %>
+
+      </p>
+    </div>
+
+    <div class="flex-row">
+        <%= f.submit "Add Shift", class: 'button tiny radius', :html => {:class => "lf--submit"}  %>
+    </div>
+<% end %>
+
