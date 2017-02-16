@@ -25,12 +25,6 @@
 
   .start-date {}
 
-  .prev-month {
-    background-color: rgba(255,0,0,0.1);
-  }
-  .next-month {
-    background-color: rgba(255,0,0,0.1);
-  }
   .current-month {}
 
   .has-events {
@@ -39,6 +33,13 @@
 
   .today {
     background-color: mediumspringgreen;
+  }
+
+  .prev-month {
+    background-color: rgba(255,0,0,0.1);
+  }
+  .next-month {
+    background-color: rgba(255,0,0,0.1);
   }
 
   .calendar-heading {
