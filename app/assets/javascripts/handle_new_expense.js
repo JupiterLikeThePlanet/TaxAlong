@@ -35,7 +35,6 @@ $(document).ready(function() {
         //         console.log("there seems to be an error")
         //     }
         // })
-
-
+        
     });
 });

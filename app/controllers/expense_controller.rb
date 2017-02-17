@@ -17,7 +17,6 @@ class ExpenseController < ApplicationController
       p "Hit new else status"
       status 422
     end
-\
   end
 
   def create
