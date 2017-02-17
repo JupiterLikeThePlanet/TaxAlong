@@ -8,6 +8,10 @@ class ShiftController < ApplicationController
   end
 
   def show
+    # p "*"*90
+    # p "show shift params: "
+    # p params
+    # p "*"*90
     # @user = User.find(params[:user_id])
     @shift = Shift.find(params[:id])
     # @shift = @user.shifts[shift]
