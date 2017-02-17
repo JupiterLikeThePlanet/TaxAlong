@@ -4,17 +4,10 @@ class ShiftController < ApplicationController
     @user = User.find(params[:user_id])
     # //User.find_by(params[:user_id]) or User.find(params[:id]) ???
     @shifts = @user.shifts.all
-    # @shifts = Shift.all
   end
 
   def show
-    # p "*"*90
-    # p "show shift params: "
-    # p params
-    # p "*"*90
-    # @user = User.find(params[:user_id])
     @shift = Shift.find(params[:id])
-    # @shift = @user.shifts[shift]
   end
 
   def new

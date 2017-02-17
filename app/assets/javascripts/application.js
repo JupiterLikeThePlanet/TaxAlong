@@ -34,18 +34,16 @@ $(document).ready(function() {
 
 
         $(this).hide()
-
-        // debugger
+        
         var request = $.ajax ({
             url: "/expense/new",
             method: 'GET',
             datatype: 'html',
             data: {id: usr_id, shift_id: shft_id}
         })
-        // debugger
+        
         request.done(function(data){
             $('.append-container').append(data)
-            // console.log("response : " + data);
         });
 
 
