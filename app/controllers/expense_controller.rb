@@ -24,7 +24,7 @@ class ExpenseController < ApplicationController
       p params
       p "*"*90
       # sendParams("<%= params[:id].to_json %>")
-      @user = User.find(params[:id])
+      @user = current_user
       @expense = @user.expenses.new
       # erb :'/expense/new', layout: false
     else
