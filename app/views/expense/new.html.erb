@@ -1,20 +1,5 @@
+<div class="page_header">
+  <h1>Add Expense!</h1>
+</div>
 
-<%= form_for :expenses, url: expense_index_path, :html => { :class => ""} do |f| %>
-
-    <div class="flex-row">
-      <%= f.select :expense_type, ['Gas', 'Food', 'Maintenance', 'Car Payment', 'License, Title and Registration', 'Car Wash', 'Parking Fees', 'Tolls', 'Phone Bill', 'Other']%>
-    </div>
-
-    <div class="flex-row">
-      <p>
-        <%= f.label :cost, :html => {:class => "lf--label", :id => ""} %>
-        <%= f.number_field :cost, :step => "0.01", :html => {:class => "lf--input"} %>
-      </p>
-    </div>
-
-    <div id="hidden-value"> </div>
-
-    <div class="flex-row">
-      <%= f.submit "Add Expense", class: 'button tiny radius', :html => {:class => "lf--submit"}  %>
-    </div>
-<% end %>
+<%= render 'expenseform' %>
