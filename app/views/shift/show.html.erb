@@ -6,6 +6,7 @@
 
 <div class="append-container">
   <%=link_to "New Expense", new_expense_path, method: :get, class: "new-expense", :shift_id => @shift.id, :user_id => @shift.user_id,:remote => true %>
+  <div id="hid-shift"></div>
 </div>
 
 <!--<h3><a id="new-expense" href="/expense/new" data-turbolinks="false">Create a new expense here</a></h3>-->

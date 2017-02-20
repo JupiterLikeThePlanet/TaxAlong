@@ -1,4 +1,6 @@
 class ShiftController < ApplicationController
+  include ShiftHelper
+
   
   def index
     @user = User.find(params[:user_id])
@@ -8,6 +10,12 @@ class ShiftController < ApplicationController
 
   def show
     @shift = Shift.find(params[:id])
+    # @current_shift = @shift.id
+    # log_shift(@shift)
+    # p "$"*90
+    # p "current shift in show shift"
+    # p @current_shift
+    # p "$"*90
   end
 
   def new

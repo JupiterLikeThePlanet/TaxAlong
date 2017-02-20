@@ -1,9 +1,9 @@
 class Shift < ApplicationRecord
 
-	has_many :expenses
+	# has_many :expenses
 	belongs_to :user
 
-	def start_time
-		self.date
-	end
+	# def start_time
+	# 	self.date
+	# end
 end
