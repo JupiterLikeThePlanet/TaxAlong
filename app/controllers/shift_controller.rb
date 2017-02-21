@@ -5,7 +5,14 @@ class ShiftController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     # //User.find_by(params[:user_id]) or User.find(params[:id]) ???
+    # @shifts = @user.shifts.all
+
     @shifts = @user.shifts.all
+    @expenses = @user.expenses.all
+
+    # @shifts = [@all_shifts, @expenses]
+
+    # @events = [@shifts, @expenses]
   end
 
   def show

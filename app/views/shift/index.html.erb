@@ -1,17 +1,35 @@
 <h1 class="page_header">Shift Dash</h1>
 <p>Check out your shifts!</p>
 
-<%= month_calendar events: @shifts do |date, shifts| %>
-  <%= date %>
+<p>Need to add a shift? <%=link_to "Add Shift", new_user_shift_path(@user.id), method: :get %></p>
 
-  <% shifts.each do |shift|%>
-      <div>
+<p>Need to add an expense? <%=link_to "Add Expense", new_user_expense_path(@user.id), method: :get %></p>
+
+<%= month_calendar events: @shifts do |date, shift| %>
+    <%= date %>
+
+    <% shift.each do |shift|%>
+        <div>
           <p>Earnings: $<%= number_with_precision(shift.earnings, :precision => 2)%> [<%=link_to "Details", user_shift_path(@user.id, shift.id), method: :get %>] </p>
-      </div>
-  <%end%>
-  </br>
-  <%=link_to "Add Shift", new_user_shift_path(@user.id), method: :get %>
+        </div>
+    <%end%>
 
 
 
-<% end %>
+<%end%>
+
+
+<%= month_calendar events: @expenses do |date, expense| %>
+    <%= date %>
+
+    <% expense.each do |expense|%>
+        <div>
+          <p>Expense: $<%= number_with_precision(expense.cost, :precision => 2)%> [<%=link_to "Details", user_expense_path(@user.id, expense.id), method: :get %>] </p>
+        </div>
+    <%end%>
+
+
+
+<%end%>
+
+

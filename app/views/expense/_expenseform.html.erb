@@ -1,9 +1,13 @@
 
 
-<%= form_for :expenses, url: expense_index_path, :html => { :class => ""} do |f| %>
+<%= form_for :expenses, url: user_expense_index_path, :html => { :class => ""} do |f| %>
 
     <div class="flex-row">
-      <%= f.select :expense_type, ['Gas', 'Food', 'Maintenance', 'Car Payment', 'License, Title and Registration', 'Car Wash', 'Parking Fees', 'Tolls', 'Phone Bill', 'Other']%>
+      <%= f.date_select :date, :order => [:day, :month, :year] %>
+    </div>
+
+    <div class="flex-row">
+      <%= f.select :expense_type, ['Gas', 'Food', 'Maintenance', 'Car Payment', 'License, Title and Registration', 'Car Wash', 'Parking Fees', 'Tolls', 'Phone Bill', 'Other'], selected_key = f.expense.expense_type%>
     </div>
 
     <div class="flex-row">
