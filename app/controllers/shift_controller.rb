@@ -9,10 +9,25 @@ class ShiftController < ApplicationController
 
     @shifts = @user.shifts.all
     @expenses = @user.expenses.all
-
     # @shifts = [@all_shifts, @expenses]
+    @events = [@shifts, @expenses]
 
-    # @events = [@shifts, @expenses]
+    # p "*"*100
+    # p "*"*100
+    # p "This is ALL shifts"
+    # p @shifts
+    # p "*"*100
+    # p "*"*100
+    # p "This is ALL expenses"
+    # p @expenses
+    # p "*"*100
+    # p "*"*100
+    # p "This is BOTH shifts and expenses"
+    # p @events
+    # p "^"*90
+    # p @events[0][0]
+    # p "*"*100
+    # p "*"*100
   end
 
   def show

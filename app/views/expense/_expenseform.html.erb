@@ -7,7 +7,8 @@
     </div>
 
     <div class="flex-row">
-      <%= f.select :expense_type, ['Gas', 'Food', 'Maintenance', 'Car Payment', 'License, Title and Registration', 'Car Wash', 'Parking Fees', 'Tolls', 'Phone Bill', 'Other'], selected_key = f.expense.expense_type%>
+      <%= f.label :expense_type, :html => {:class => "lf--label", :id => ""} %>
+      <%= f.select :expense_type, options_for_select(['Gas', 'Food', 'Maintenance', 'Car Payment', 'License, Title and Registration', 'Car Wash', 'Parking Fees', 'Tolls', 'Phone Bill', 'Other'], :selected => params[:expense_type])%>
     </div>
 
     <div class="flex-row">
@@ -23,3 +24,7 @@
       <%= f.submit "Add Expense", class: 'button tiny radius', :html => {:class => "lf--submit"}  %>
     </div>
 <% end %>
+
+<!--, @expense.expense_type-->
+<!--, :selected => :expense_type-->
+<!--selected_key = f.expense.expense_type-->
