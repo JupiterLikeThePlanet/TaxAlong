@@ -12,6 +12,7 @@ class ExpenseController < ApplicationController
     p "*"*90
     # @expense = Expense.find_by(params[:date])
     @expense = Expense.find(params[:id])
+
   end
 
   def new
@@ -39,6 +40,7 @@ class ExpenseController < ApplicationController
   end
 
   def create
+    # @types = ['Gas', 'Food', 'Maintenance', 'Car Payment', 'License, Title and Registration', 'Car Wash', 'Parking Fees', 'Tolls', 'Phone Bill', 'Other']
     @expense = current_user.expenses.new(expense_params)
     p "*"*90
     p "params in create expense"
