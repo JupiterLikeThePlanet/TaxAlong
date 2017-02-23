@@ -1,0 +1,33 @@
+
+
+<%= form_for :expenses, url: user_expense_index_path, :html => { :class => ""} do |f| %>
+
+    <div class="flex-row">
+      <%= f.date_select :date, :order => [:day, :month, :year] %>
+    </div>
+
+    <div class="flex-row">
+      <%= f.label :expense_type, :html => {:class => "lf--label", :id => ""} %>
+      <%= f.select(:expense_type, options_for_select([['Gas', 'gas'], ['Food', 'food'], ['Maintenance', 'maintenance'], ['Car Payment','car_payment'], ['License, Title and Registration', 'license_title_and_registration'], ['Car Wash', 'car_wash'], ['Parking Fees', 'parking_fees'], ['Tolls', 'tolls'], ['Phone Bill', 'phone_bill'], ['Other', 'other']], f.object.expense_type))%>
+    </div>
+
+    <div class="flex-row">
+      <p>
+        <%= f.label :cost, :html => {:class => "lf--label", :id => ""} %>
+        <%= f.number_field :cost, :step => "0.01", :html => {:class => "lf--input"} %>
+      </p>
+    </div>
+
+    <div id="hidden-value"> </div>
+
+    <div class="flex-row">
+      <%= f.submit "Add Expense", class: 'button tiny radius', :html => {:class => "lf--submit"}  %>
+    </div>
+<% end %>
+
+<!--:selected => f.object.expense_type-->
+
+<!--f.select :expense_type, options_for_select(['Gas', 'Food', 'Maintenance', 'Car Payment', 'License, Title and Registration', 'Car Wash', 'Parking Fees', 'Tolls', 'Phone Bill', 'Other'], :selected => params[:expense_type])-->
+<!--, @expense.expense_type-->
+<!--, :selected => :expense_type-->
+<!--selected_key = f.expense.expense_type-->

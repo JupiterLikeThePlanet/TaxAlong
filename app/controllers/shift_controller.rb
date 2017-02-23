@@ -1,16 +1,43 @@
 class ShiftController < ApplicationController
+  include ShiftHelper
+
   
   def index
     @user = User.find(params[:user_id])
     # //User.find_by(params[:user_id]) or User.find(params[:id]) ???
+    # @shifts = @user.shifts.all
+
     @shifts = @user.shifts.all
-    # @shifts = Shift.all
+    @expenses = @user.expenses.all
+    # @shifts = [@all_shifts, @expenses]
+    @events = [@shifts, @expenses]
+
+    # p "*"*100
+    # p "*"*100
+    # p "This is ALL shifts"
+    # p @shifts
+    # p "*"*100
+    # p "*"*100
+    # p "This is ALL expenses"
+    # p @expenses
+    # p "*"*100
+    # p "*"*100
+    # p "This is BOTH shifts and expenses"
+    # p @events
+    # p "^"*90
+    # p @events[0][0]
+    # p "*"*100
+    # p "*"*100
   end
 
   def show
-    # @user = User.find(params[:user_id])
     @shift = Shift.find(params[:id])
-    # @shift = @user.shifts[shift]
+    # @current_shift = @shift.id
+    # log_shift(@shift)
+    # p "$"*90
+    # p "current shift in show shift"
+    # p @current_shift
+    # p "$"*90
   end
 
   def new
