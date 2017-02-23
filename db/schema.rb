@@ -16,12 +16,13 @@ ActiveRecord::Schema.define(version: 20161018200217) do
   enable_extension "plpgsql"
 
   create_table "expenses", force: :cascade do |t|
-    t.string   "type"
-    t.integer  "shift_id"
+    t.datetime "date"
+    t.string   "expense_type"
     t.decimal  "cost"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["shift_id"], name: "index_expenses_on_shift_id", using: :btree
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["user_id"], name: "index_expenses_on_user_id", using: :btree
   end
 
   create_table "shifts", force: :cascade do |t|

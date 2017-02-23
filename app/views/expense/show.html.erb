@@ -1,2 +1,11 @@
-<h1>Expense#show</h1>
-<p>Find me in app/views/expense/show.html.erb</p>
+<div class="page_header">
+  <h1><%= @expense.date.strftime("%A, %B %d") %> </h1>
+</div>
+
+
+
+  <ul>
+    <li><%= @expense.expense_type %></li>
+    <li><%= number_with_precision(@expense.cost, :precision => 2) %></li>
+  </ul>
+

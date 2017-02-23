@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :about, only: [:index]
   resources :users, except: [:index] do
     resources :shift
+    resources :expense
   end
     post '/users/new' => 'users#create'
-  resources :expense
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
