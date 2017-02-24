@@ -8,7 +8,7 @@
 
     <div class="flex-row">
       <%= f.label :expense_type, :html => {:class => "lf--label", :id => ""} %>
-      <%= f.select(:expense_type, options_for_select([['Gas', 'gas'], ['Food', 'food'], ['Maintenance', 'maintenance'], ['Car Payment','car_payment'], ['License, Title and Registration', 'license_title_and_registration'], ['Car Wash', 'car_wash'], ['Parking Fees', 'parking_fees'], ['Tolls', 'tolls'], ['Phone Bill', 'phone_bill'], ['Other', 'other']], f.object.expense_type))%>
+      <%= f.select(:expense_type, options_for_select([['Gas', 'gas'], ['Food', 'Food'], ['Maintenance', 'Maintenance'], ['Car Payment','Car Payment'], ['License, Title and Registration', 'License, Title and Registration'], ['Car Wash', 'Car Wash'], ['Parking Fees', 'Parking Fees'], ['Tolls', 'Tolls'], ['Phone Bill', 'Phone Bill'], ['Other', 'Other']]))%>
     </div>
 
     <div class="flex-row">
