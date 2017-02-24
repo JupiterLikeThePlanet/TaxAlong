@@ -65,5 +65,5 @@ private
 
 def expense_params
   # params.require(:expenses).permit(:type, :cost, @current_user.id, current_shift)
-  params.require(:expenses).permit(:date, :type, :cost, :id, :user_id)
+  params.require(:expenses).permit(:date, :expense_type, :cost, :id, :user_id)
 end
