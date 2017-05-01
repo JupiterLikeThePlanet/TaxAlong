@@ -8,15 +8,15 @@
       <p>You are in the first quarter</p>
       <p>This quarter ends on <strong>March 31st</strong></p>
       <p>Estimated tax is due by <strong>April 15</strong></p>
-  <%elsif 4 <= @month <= 5 %>
+  <%elsif (@month >= 4) && (@month <= 5)%>
       <p>You are in the second quarter</p>
       <p>This quarter ends on <strong>May 31st</strong></p>
       <p>Estimated tax is due by <strong>June 15</strong></p>
-  <%elsif 6 <= @month <= 8 %>
+  <%elsif (@month >= 6) && (@month <= 8)%>
       <p>You are in the third quarter</p>
       <p>This quarter ends on <strong>August 31st</strong></p>
       <p>Estimated tax is due by <strong>September 15</strong></p>
-  <%elsif  9 <= @month <= 12 %>
+  <%elsif (@month >= 9) && (@month <= 12) %>
       <p>You are in the fourth quarter</p>
       <p>This quarter ends on <strong>December 31st</strong></p>
       <p>Estimated tax is due by <strong>January 15</strong></p>
