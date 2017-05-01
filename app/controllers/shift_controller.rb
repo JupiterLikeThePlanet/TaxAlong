@@ -85,5 +85,5 @@ end
 private
 
 def shift_params
-  params.require(:shifts).permit(:start_mileage, :end_mileage, :earnings, :date)
+  params.require(:shifts).permit(:start_mileage, :end_mileage, :earnings, :date, expense_attributes:[:expense_type, :cost, :shift_id, :id])
 end

@@ -4,7 +4,8 @@ class CreateExpenses < ActiveRecord::Migration[5.0]
       t.datetime :date
       t.string :expense_type
       t.decimal :cost
-      t.references :user
+      # t.references :user
+      t.references :shift
 
       t.timestamps
     end
