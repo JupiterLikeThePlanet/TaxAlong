@@ -5,27 +5,27 @@
 <%= form_for :shifts, url: user_shift_index_path, :html => { :class => "login-form new-expense-form"} do |f| %>
 
     <div class="flex-row">
-      <%= f.date_select :date, :order => [:day, :month, :year] %>
+      <%= f.date_select :date, :default => @shift.date, :order => [:day, :month, :year] %>
     </div>
 
     <div class="flex-row">
       <p>
         <%= f.label :start_mileage, :html => {:class => "lf--label", :id => "username"} %>
-        <%= f.number_field :start_mileage, :html => {:class => "lf--input"}  %>
+        <%= f.number_field :start_mileage, :value => @shift.start_mileage,  :html => {:class => "lf--input"}  %>
       </p>
     </div>
 
     <div class="flex-row">
       <p>
         <%= f.label :end_mileage, :html => {:class => "lf--label", :id => "username"} %>
-        <%= f.number_field :end_mileage, :html => {:class => "lf--input"} %>
+        <%= f.number_field :end_mileage, :value => @shift.end_mileage, :html => {:class => "lf--input"} %>
       </p>
     </div>
 
     <div class="flex-row">
       <p>
         <%= f.label :earnings, :html => {:class => "lf--label", :id => "username"} %>
-        <%= f.number_field :earnings, :step => "0.01", :html => {:class => "lf--input"} %>
+        <%= f.number_field :earnings, :step => "0.01", :value => @shift.earnings,  :html => {:class => "lf--input"} %>
 
       </p>
     </div>

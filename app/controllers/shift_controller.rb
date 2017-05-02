@@ -42,7 +42,8 @@ class ShiftController < ApplicationController
   end
 
   def edit
-    @shift = Shift.find(params[:id])
+    @shift = current_user.shifts.find(params[:id])
+    # @shift = Shift.find(params[:id])
   end
 
   def update
