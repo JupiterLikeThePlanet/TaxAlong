@@ -16,7 +16,9 @@ class ExpenseController < ApplicationController
   end
 
   def new
-    @expense = current_user.expenses.new
+    @shift = current_user.shifts.find(params[:shift_id])
+    @expense = @shift.expenses.new
+    # @expense = current_user.expenses.new
     respond_to do |format|
       format.html
       # format.js
