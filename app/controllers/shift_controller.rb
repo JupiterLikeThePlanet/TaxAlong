@@ -10,24 +10,8 @@ class ShiftController < ApplicationController
     @shifts = @user.shifts.all
     @expenses = @user.expenses.all
     # @shifts = [@all_shifts, @expenses]
-    @events = [@shifts, @expenses]
+    # @events = [@shifts, @expenses]
 
-    # p "*"*100
-    # p "*"*100
-    # p "This is ALL shifts"
-    # p @shifts
-    # p "*"*100
-    # p "*"*100
-    # p "This is ALL expenses"
-    # p @expenses
-    # p "*"*100
-    # p "*"*100
-    # p "This is BOTH shifts and expenses"
-    # p @events
-    # p "^"*90
-    # p @events[0][0]
-    # p "*"*100
-    # p "*"*100
   end
 
   def show
@@ -46,6 +30,7 @@ class ShiftController < ApplicationController
 
   def create
     @shift = current_user.shifts.new(shift_params)
+    # @shift = Shift.new(shift_params)
     ####
     # @shift = current_user.shifts.new(:start_mileage => params["shifts"][:start_mileage], :end_mileage => params["shifts"][:end_mileage], :earnings => params["shifts"][:earnings])
     ###
@@ -58,14 +43,18 @@ class ShiftController < ApplicationController
   end
 
   def edit
-    @shift = Shift.find(params[:id])
+
+    @shift = current_user.shifts.find(params[:id])
+    # @shift = Shift.find(params[:id])
   end
 
   def update
-    @shift = Shift.find(params[:id])
+
+    @shift = current_user.shifts.find(params[:id])
+    # @shift = Shift.find(params[:id])
     if @shift.update_attributes(shift_params)
       flash[:success] = "Info updated"
-      redirect_to shift_url(@shift)
+      redirect_to user_shift_path(@shift.user_id, @shift.id)
     else
       flash[:danger] = "Edits did not save, try again"
       render 'edit'
@@ -73,11 +62,11 @@ class ShiftController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @shift = Shift.find(params[:id])
+
+    @shift = current_user.shifts.find(params[:id])
     @shift.destroy
     flash[:success] = "Shift deleted"
-    redirect_to user_url(@user)
+    redirect_to user_shift_index_path(current_user)
   end
 
 end
@@ -85,5 +74,5 @@ end
 private
 
 def shift_params
-  params.require(:shifts).permit(:start_mileage, :end_mileage, :earnings, :date)
+  params.require(:shifts).permit(:start_mileage, :end_mileage, :earnings, :date, :id)
 end
