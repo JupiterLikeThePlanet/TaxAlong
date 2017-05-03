@@ -43,17 +43,13 @@ class ShiftController < ApplicationController
   end
 
   def edit
-    p "$"*90
-    p params
-    p "$"*90
+
     @shift = current_user.shifts.find(params[:id])
     # @shift = Shift.find(params[:id])
   end
 
   def update
-    p "$"*90
-    p params
-    p "$"*90
+
     @shift = current_user.shifts.find(params[:id])
     # @shift = Shift.find(params[:id])
     if @shift.update_attributes(shift_params)
@@ -66,11 +62,11 @@ class ShiftController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @shift = Shift.find(params[:id])
+
+    @shift = current_user.shifts.find(params[:id])
     @shift.destroy
     flash[:success] = "Shift deleted"
-    redirect_to user_url(@user)
+    redirect_to user_shift_index_path(current_user)
   end
 
 end

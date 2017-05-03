@@ -5,7 +5,11 @@
 <%= react_component('AdjustIncome', {startMileage: @shift.start_mileage, endMileage: @shift.end_mileage, earnings: number_with_precision(@shift.earnings, :precision => 2)}, {prerender: true}) %>
 
 
-<%=link_to "Edit Shift Details", edit_user_shift_path(@shift.user_id, @shift.id), method: :get %></p>
+<%=link_to "Edit Shift Details", edit_user_shift_path(@shift.user_id, @shift.id), method: :get %>
+
+<%=link_to "Delete Shift", user_shift_path(@shift.user_id, @shift.id), method: :delete %></p>
+
+
 
 
 <!--<h3><a id="new-expense" href="/expense/new" data-turbolinks="false">Create a new expense here</a></h3>-->
