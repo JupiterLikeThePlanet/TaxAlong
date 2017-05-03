@@ -14,10 +14,19 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    p "**" * 100
+    p @user
+    p "**" * 100
   end
 
   def create
-    @user = User.new(:first_name => params["user"][:first_name], :last_name => params["user"][:last_name], :email => params["user"][:email], :password => params["user"][:password])
+
+    p "**" * 100
+    p @user
+    p "**" * 100
+    
+    # @user = User.new(:first_name => params["user"][:first_name], :last_name => params["user"][:last_name], :email => params["user"][:email], :password => params["user"][:password])
+    @user = User.new(user_params)
 
     if @user.save!
       log_in @user
@@ -52,4 +61,11 @@ class UsersController < ApplicationController
     # flash[:success] = "User deleted"
     redirect_to root_path
   end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, shift_attributes: [:start_mileage, :end_mileage, :earnings, :date, :id])
+  end
+
+
 end
+

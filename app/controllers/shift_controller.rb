@@ -30,6 +30,7 @@ class ShiftController < ApplicationController
 
   def create
     @shift = current_user.shifts.new(shift_params)
+    # @shift = Shift.new(shift_params)
     ####
     # @shift = current_user.shifts.new(:start_mileage => params["shifts"][:start_mileage], :end_mileage => params["shifts"][:end_mileage], :earnings => params["shifts"][:earnings])
     ###
@@ -42,15 +43,22 @@ class ShiftController < ApplicationController
   end
 
   def edit
+    p "$"*90
+    p params
+    p "$"*90
     @shift = current_user.shifts.find(params[:id])
     # @shift = Shift.find(params[:id])
   end
 
   def update
-    @shift = Shift.find(params[:id])
+    p "$"*90
+    p params
+    p "$"*90
+    @shift = current_user.shifts.find(params[:id])
+    # @shift = Shift.find(params[:id])
     if @shift.update_attributes(shift_params)
       flash[:success] = "Info updated"
-      redirect_to shift_url(@shift)
+      redirect_to user_shift_path(@shift.user_id, @shift.id)
     else
       flash[:danger] = "Edits did not save, try again"
       render 'edit'
@@ -70,5 +78,5 @@ end
 private
 
 def shift_params
-  params.require(:shifts).permit(:start_mileage, :end_mileage, :earnings, :date)
+  params.require(:shifts).permit(:start_mileage, :end_mileage, :earnings, :date, :id)
 end

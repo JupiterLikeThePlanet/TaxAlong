@@ -2,7 +2,7 @@
 <p>Find me in app/views/shift/update.html.erb</p>
 
 
-<%= form_for :shifts, url: user_shift_index_path, :html => { :class => "login-form new-expense-form"} do |f| %>
+<%= form_for :shifts, url: user_shift_path(@shift.user_id, @shift.id), :html => { :method => :put, :class => "login-form new-expense-form"} do |f| %>
 
     <div class="flex-row">
       <%= f.date_select :date, :default => @shift.date, :order => [:day, :month, :year] %>
