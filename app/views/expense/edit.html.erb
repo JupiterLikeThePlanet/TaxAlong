@@ -1,13 +1,16 @@
+<div class="page_header">
+  <h1>Edit Expense!</h1>
+</div>
 
 <div class="container center_div">
   <!-- <div class="form-group"> -->
-    <%= form_for :expenses, url: user_expense_index_path, :html => { :class => ""} do |f| %>
+    <%= form_for :expenses, url: user_expense_path(current_user, @expense.id), :html => { :method => :put, :class => ""} do |f| %>
 
       <div class="row form-group">
         <div class= "col-xs-6 col-sm-6 col-lg-12 col-xl-12">
 
           <div class="flex-row">
-            <%= f.date_select :date, :order => [:day, :month, :year] %>
+            <%= f.date_select :date, :default => @expense.date, :order => [:day, :month, :year] %>
           </div>
 
         </div>
@@ -18,8 +21,8 @@
           <div class="flex-row">
             <%= f.label :expense_type, :html => {:class => "lf--label col-form-label", :id => ""} %>
             <br/>
-
-            <%= f.collection_select :expense_type, Expense.expense_types, :first, :last, {}, :class => 'form-control', :id => '' %>
+           
+            <%= f.collection_select :expense_type, Expense.expense_types, :first, :last, {:selected => @expense.expense_type}, :class => 'form-control', :id => '' %>
 
           </div>
         </div>
@@ -32,7 +35,7 @@
             <p>
               <%= f.label :cost, :html => {:class => "lf--label", :id => ""} %>
               <br/>
-              <%= f.number_field :cost, :step => "0.01", :html => {:class => "lf--input form-control"} %>
+              <%= f.number_field :cost, :step => "0.01", :value => @expense.cost, :html => {:class => "lf--input form-control"} %>
             </p>
           </div>
 
@@ -42,7 +45,7 @@
       <div class="row form-group">
         <div class= "col-xs-6 col-sm-6 col-lg-12 col-xl-12">
           <div class="flex-row">
-            <%= f.submit "Add Expense", class: 'button tiny radius', :html => {:class => "lf--submit"}  %>
+            <%= f.submit "Edit Expense", class: 'button tiny radius', :html => {:class => "lf--submit"}  %>
           </div>
         </div>
       </div>
@@ -50,6 +53,9 @@
     <% end %>
 
     <%=link_to "Back", user_shift_index_path(current_user), method: :get %>
-      
+    
+	   |
+
+  	<%=link_to "Delete Expense", user_expense_path(@expense.user_id, @expense.id), method: :delete %></p>
   <!-- </div> -->
 </div>

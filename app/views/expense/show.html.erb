@@ -9,3 +9,12 @@
     <li><%= number_with_precision(@expense.cost, :precision => 2) %></li>
   </ul>
 
+    <%=link_to "Back", user_shift_index_path(current_user), method: :get %>
+    
+  	    |
+
+	<%=link_to "Edit Expense Details", edit_user_expense_path(@expense.user_id, @expense.id), method: :get %>
+
+		|
+
+  	<%=link_to "Delete Expense", user_expense_path(@expense.user_id, @expense.id), method: :delete %></p>
