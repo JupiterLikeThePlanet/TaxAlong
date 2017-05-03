@@ -84,9 +84,6 @@ class ExpenseController < ApplicationController
 
   def create
 
-    @types = ['Gas', 'Food', 'Maintenance', 'Car Payment', 'License, Title and Registration', 'Car Wash', 'Parking Fees', 'Tolls', 'Phone Bill', 'Other']
-
-
     @expense = current_user.expenses.new(expense_params)
 
     if @expense.save!
@@ -108,7 +105,8 @@ class ExpenseController < ApplicationController
 
     if @expense.update_attributes(expense_params)
       flash[:success] = "Info updated"
-      redirect_to user_expense_path(@expense.user_id, @expense.id)
+      redirect_to user_expense_path(current_user, @expense.id)
+      # redirect_to user_expense_path(@expense.user_id, @expense.id)
     else
       flash[:danger] = "Edits did not save, try again"
       render 'edit'
@@ -120,7 +118,7 @@ class ExpenseController < ApplicationController
     @expense = current_user.expenses.find(params[:id])
     @expense.destroy
     flash[:success] = "Expense deleted"
-    redirect_to user_expense_index_path(current_user)
+    redirect_to user_shift_index_path(current_user)
   end
 
 end
