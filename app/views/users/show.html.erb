@@ -31,6 +31,16 @@
 
   <p>Check out your Shifts! <%= link_to 'Shifts Overview', user_shift_index_path(@user.id), method: :get%></p>
 
-
-
 </div>
+
+<hr>
+
+<br>
+
+<div id="schedule_c_component">
+  <%= react_component('ScheduleC', {shifts: current_user.shifts.all, expenses: current_user.expenses.all}) %>
+<div>
+
+
+
+  

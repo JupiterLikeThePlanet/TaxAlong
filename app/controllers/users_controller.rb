@@ -10,6 +10,10 @@ class UsersController < ApplicationController
 
     @time = Time.new
     @month = @time.strftime("%m").to_i
+
+    p "**" * 100
+    p current_user.shifts.all
+    p "**" * 100
   end
 
   def new
