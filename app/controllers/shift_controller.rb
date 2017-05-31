@@ -85,7 +85,7 @@ class ShiftController < ApplicationController
     @shift = current_user.shifts.find(params[:id])
     if (integered_end < integered_start)
       flash[:danger] = "End mileage is less than start mileage, try again"
-      render :new
+      render 'edit'
     elsif (@shift.update_attributes(shift_params))
       flash[:success] = "Info updated"
       redirect_to user_shift_path(@shift.user_id, @shift.id)
