@@ -23,7 +23,37 @@ var ScheduleC = React.createClass({
         };
     },
 
-// This is firing twice
+    mileageAsExpenses: function(non_work_mileage) {
+      
+      var shifts = this.state.shifts
+
+      var shift_mileage = 0
+      
+      shifts.forEach(function(shift){
+        shift_mileage += (shift.start_mileage - shift.end_mileage)
+      })
+
+      var total_mileage += (shift_mileage + non_work_mileage)
+      var expensable_miles = (shift_mileage/ total_mileage) 
+
+      var expenses = current_user.expenses.all
+      var total_vehicle_expenses = 0 
+      
+
+      expenses.forEach(function(expense){
+
+        if (expense.expense_type === 'Food') || (expense.expense_type === 'Phone Bill') || (expense.expense_type === 'Other'){
+            continue
+        }else{        
+            total_vehicle_expenses += expense.cost
+        }
+
+        adjusted_vehicle_expenses = (total_vehicle_expenses * expensable_miles)  
+
+        return adjusted_vehicle_expenses
+
+    },
+
     switchIndividualExpenses: function() {
       this.setState({
         individual_expenses: !(this.state.individual_expenses)
@@ -36,6 +66,10 @@ var ScheduleC = React.createClass({
       this.setState({
         outside_miles: miles_integers
       });
+    },
+
+    estimateScheduleC: function(){
+
     },
 
   render: function() {
@@ -76,10 +110,12 @@ var ScheduleC = React.createClass({
           <p>Q: Which quarter do you want to estimate tax for?</p>
           <select>
             <option value="1">First</option>
-            <option value="2">Second</option>
-            <option selected value="3">Third</option>
+            <option selected value="2">Second</option>
+            <option value="3">Third</option>
             <option value="4">Fourth</option>
           </select>
+
+          <button onClick={this.estimateScheduleC}>Estimate Tax</button>
 
 
       </div>
