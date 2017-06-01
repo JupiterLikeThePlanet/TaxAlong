@@ -16,6 +16,7 @@ gem "simple_calendar", "~> 2.0"
 
 gem 'react-rails', "~> 1.6"
 gem 'bootstrap', '~> 4.0.0.alpha6' #
+
 gem 'sprockets-rails', :require => 'sprockets/railtie' #docs at https://github.com/rails/sprockets-rails
 
 gem 'pry-rails', :group => :development
