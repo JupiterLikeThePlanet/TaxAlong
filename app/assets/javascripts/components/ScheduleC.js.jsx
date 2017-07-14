@@ -87,13 +87,24 @@ var ScheduleC = React.createClass({
       })
     },
 
-    switchIndividualExpenses: function() {
+    switchIndividualExpenses: function(e) {
+      var that = this
+      console.log("e.target.value: " + e.target.value)
+      var bool = JSON.parse(e.target.value)
+
       this.setState({
-        individual_expenses: !(this.state.individual_expenses)
+        individual_expenses: !bool <<< problem here
       });
+
+      console.log("individual_expenses: " + this.state.individual_expenses)
+
+      // this.setState({
+      //   individual_expenses: !(this.state.individual_expenses)
+      // });
     },
 
     handleOutsideMiles: function(e) {
+      console.log("inside handleOutsideMiles")
       var miles_integers = parseInt(e.target.value)
 
       this.setState({
@@ -108,6 +119,7 @@ var ScheduleC = React.createClass({
   render: function() {
     // console.log(this.state.individual_expenses);
     console.log(this.state.outside_miles)
+    console.log("individual expenses at load: " + this.state.individual_expenses)
     return (
       <div>
           <h5>Schedule C Questions</h5>
@@ -118,8 +130,8 @@ var ScheduleC = React.createClass({
           <p>Q: Would you like to expense your vehicle costs by cents/mile or by your individual expenses?</p>
 
 
-          <select>
-            <option selected value="true" >Individual Expenses</option>
+          <select defaultValue="true" onChange={this.switchIndividualExpenses}>
+            <option value="true" >Individual Expenses</option>
             <option value="false">Cents per mile</option>
           </select>
 
